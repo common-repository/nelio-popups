@@ -1,0 +1,156 @@
+.nelio-invisible-popup-wrapper {
+	border: 0;
+	clip: rect(1px, 1px, 1px, 1px);
+	clip-path: inset(50%);
+	height: 1px;
+	margin: -1px;
+	margin-top: -1px;
+	margin-bottom: -1px;
+	overflow: hidden;
+	padding: 0;
+	position: absolute !important;
+	width: 1px;
+	word-wrap: normal !important;
+	word-break: normal;
+}
+
+.nelio-popup-store {
+	position: fixed;
+	top: 0;
+	left: -100000px;
+	left: -2000vw;
+}
+
+.nelio-popup {
+	background: #fff;
+	box-sizing: content-box;
+	opacity: 1;
+	padding: 0;
+	transform: translate(0, 0);
+	overflow-y: auto;
+	max-height: 100vh;
+
+	&-positioner {
+		position: fixed;
+	}
+
+	> .nelio-popup-content {
+		border-radius: 0;
+		border: none;
+		display: block;
+		margin: 0;
+		overflow: none;
+		width: 100%;
+
+		> :first-child {
+			margin-top: 0 !important;
+		}
+
+		> :last-child {
+			margin-bottom: 0 !important;
+		}
+	}
+
+	&-body--is-scroll-disabled {
+		overflow: hidden;
+	}
+
+	&-wrapper {
+		height: 0;
+		margin: 0;
+		overflow: hidden;
+		padding: 0;
+		width: 0;
+	}
+
+	&-overlay {
+		background: none;
+		height: 100vh;
+		left: 0;
+		opacity: 0;
+		position: fixed;
+		top: 0;
+		transition: opacity 100ms ease-in-out;
+		width: 100vw;
+
+		&--is-visible {
+			opacity: 1;
+		}
+	}
+
+	&-size {
+
+		&--is-auto-tiny {
+			width: 200px;
+		}
+
+		&--is-auto-small {
+			width: 400px;
+		}
+
+		&--is-auto-medium {
+			width: 600px;
+		}
+
+		&--is-auto-normal {
+			width: 800px;
+		}
+
+		&--is-auto-large {
+			width: 1400px;
+		}
+
+		&--is-fullscreen {
+			height: 100vh;
+			width: 100vw;
+		}
+	}
+
+	&-close-button {
+
+		&,
+		&:active,
+		&:focus,
+		&:hover {
+			align-items: center;
+			border: none;
+			border-radius: unset;
+			box-shadow: none;
+			cursor: pointer;
+			display: flex;
+			flex-direction: row;
+			font-size: 12px;
+			gap: 0.2em;
+			margin: 0;
+			outline: none;
+			padding: 0.5em;
+			position: absolute;
+			z-index: 999;
+		}
+
+		&--is-top-left {
+			top: 0;
+			left: 0;
+		}
+
+		&--is-top-right {
+			top: 0;
+			right: 0;
+		}
+
+		&--is-bottom-left {
+			bottom: 0;
+			left: 0;
+		}
+
+		&--is-bottom-right {
+			bottom: 0;
+			right: 0;
+		}
+	}
+}
+
+.logged-in .nelio-popup-size--is-fullscreen {
+	position: relative;
+	top: 32px;
+}
